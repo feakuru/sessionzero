@@ -1,0 +1,37 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<div class="flex flex-grow">
+    <!-- Party members view -->
+    <div class="w-1/3 border-r-2 border-gray-200 overflow-auto">
+        <h1 class="text-xl font-bold p-4">{{ party.name }}</h1>
+        <ul>
+            {% for member in party.members %}
+            <li class="p-4 border-b-2 border-gray-200 cursor-pointer hover:bg-blue-200 hover:text-white"
+                id="character-link-{{ member.id }}" data-member-id="{{ member.id }}" hx-get="/character/{{ member.id }}"
+                hx-swap="afterbegin" hx-target="#main-tab-view"
+                hx-on::after-request="this.setAttribute('hx-disable', 'true')">
+                {{ member.name }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Main tab view -->
+    <div id="main-tab-view" class="w-2/3 flex flex-col">
+        <div id="party-channel-tab-content" class="overflow-auto p-4 flex flex-col flex-grow">
+            <!-- Party channel -->
+            <div id="party-channel" class="flex-grow">
+                <!-- Messages and events will be appended here -->
+            </div>
+            <form id="message-form" class="border-t-2 border-gray-200 p-4" hx-post="/send-message"
+                hx-swap="beforeend #party-channel">
+                <input type="text" name="message" placeholder="Type a message..."
+                    class="w-full p-2 border-2 border-gray-200 rounded">
+                <button type="submit" class="mt-2 bg-blue-500 text-white p-2 rounded">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

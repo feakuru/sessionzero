@@ -1,0 +1,7 @@
+<!-- Character div -->
+<div id="character-{{ character.id }}" class="bg-white overflow-auto p-4 flex-grow">
+    <button class="close-button"
+        _="on click remove @hx-disable from #character-link-{{ character.id }} htmx.process(#character-link-{{ character.id }}) remove me.parentElement">Close</button>
+    <h2>{{ character.name }}</h2>
+    <p>{{ character.bio }}</p>
+</div>

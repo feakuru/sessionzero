@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session0</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.9"
+        integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Merriweather', serif;
+    }
+    </style>
+    {% block headend %}{% endblock %}
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col hx-boost">
+    <nav class="bg-white p-6 flex justify-between items-center">
+        <div class="flex-grow flex space-x-4">
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Home icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Home</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Games icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Games</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Systems icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Systems</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Characters icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Characters</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Parties icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Parties</span>
+            </a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-full w-full block md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 50 50" stroke="currentColor">
+                    <!-- Profile icon SVG goes here -->
+                    <!-- Hexagon SVG -->
+                    <polygon points="25,0 45,12.5 45,37.5 25,50 5,37.5 5,12.5" stroke="currentColor" fill="none" />
+                    <!-- Lines connecting vertices -->
+                    <line x1="25" y1="0" x2="5" y2="37.5" stroke="currentColor" />
+                    <line x1="25" y1="0" x2="45" y2="37.5" stroke="currentColor" />
+                    <line x1="5" y1="37.5" x2="45" y2="37.5" stroke="currentColor" />
+                </svg>
+                <span class="hidden md:block text-blue-500 hover:text-blue-700">Profile</span>
+            </a>
+        </div>
+    </nav>
+    <main class="container mx-auto p-6 flex-grow flex overflow-auto">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
